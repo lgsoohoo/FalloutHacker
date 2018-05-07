@@ -1,4 +1,6 @@
-#Python2 #Hack by PikaLuca87, Summer 2017
+#Python FalloutHacker
+#https://github.com/lgsoohoo/FalloutHacker
+#By PikaLuca87
 from random import random
 print"Fallout 3: Hacking: Hacking Computer terminals"
 print"\nROBCO INDUSTRIES (TM) TERMLINK PROTOCOL"
@@ -9,6 +11,9 @@ while True:     #Loading in possible_passwords
   entry=raw_input("0xF9"+str(int(random()*89+10))+" ")
   if entry=="":
     break
+  elif entry == "\del":
+	print("Removed"+possible_passwords[len(possible_passwords)-1])
+	del possible_passwords[len(possible_passwords)-1]
   else:
       possible_passwords.append(entry)
 
