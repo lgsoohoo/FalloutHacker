@@ -1,19 +1,31 @@
 #Python3 FalloutHacker
 #https://github.com/lgsoohoo/FalloutHacker
 #By PikaLuca87
+
+
+# All possible passwords must be the same length
+# Passwords you try must be from the list you entered before
+# Press 'enter' with no text  or '\start' to begin testing passwords
+# Type '\del' to delete an entered possible password
 from random import random
-print ("Fallout 3: Hacking: Hacking Computer terminals")
+print ("Fallout 3: Hacking: Hacking Computer Terminals")
 print ("\nROBCO INDUSTRIES (TM) TERMLINK PROTOCOL")
 print ("\nENTER POSSIBLE_PASSWORDS NOW\n")
 
 possible_passwords=[]
 while True:     #Loading in possible_passwords
-    entry=raw_input("0xF9"+str(int(random()*89+10))+" ")
+    entry=input("0xF9"+str(int(random()*89+10))+" ")
+    if len(possible_passwords)>0:
+      if len(entry)!=len(possible_passwords[0]):
+        print("INVALID POSSIBLE PASSWORD. CHECK WORD LENGTH.")
     if entry=="":
-        break
+      # Dont do anything
+      none = 7
+    elif entry == "\start":
+      break
     elif entry =="\del":
         last = len(possible_passwords)-1
-        print ("Removed"+possible_passwords[last])
+        print ("Removed "+possible_passwords[last])
         del possible_passwords[last]
     else:
         possible_passwords.append(entry)
@@ -27,10 +39,10 @@ for x in range(0,4):#give 4 attempts
 
   s="\n"    #get the test word and num correct from user
   print ("\nAVAILABLE OPTIONS:\n"+s.join( possible_passwords ))
-  test_word=raw_input("ENTER TEST PASSWORD NOW:")
+  test_word=input("ENTER TEST PASSWORD NOW:")
   while len(test_word)!=len(possible_passwords[0]):
-	  test_word=raw_input("ERROR. PLEASE TRY AGAIN:")
-  test_num_correct=raw_input("?/"+str(len(possible_passwords[0]))+" CORRECT:")
+	  test_word=input("ERROR:CHECK WORD LENGTH. PLEASE TRY AGAIN:")
+  test_num_correct=input("?/"+str(len(possible_passwords[0]))+" CORRECT:")
 
   words_to_delete=[]
   for word in possible_passwords: #find the words to be deleted
