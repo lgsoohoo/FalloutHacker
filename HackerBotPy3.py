@@ -72,6 +72,11 @@ for x in range(0,4): #give 4 attempts
   for delete in words_to_delete: #deleting the bad words from possible_passwords
     possible_passwords.remove(delete)
 
+  if len(possible_passwords)==1:
+    unlocked=True
+    print("\nPASSWORD IDENTIFIED:"+possible_passwords[0])
+    break;
+
 
 if unlocked:
   print("\n\nEXACT MATCH!\nPLEASE WAIT WHILE SYSTEM IS ACCESSED")
