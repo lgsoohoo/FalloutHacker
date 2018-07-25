@@ -11,15 +11,15 @@ from random import random
 print ("Fallout 3: Hacking: Hacking Computer Terminals")
 print ("\nROBCO INDUSTRIES (TM) TERMLINK PROTOCOL")
 print ("\nENTER POSSIBLE_PASSWORDS NOW\n")
-print ("===========================\nEscape sequence: \\start , \\del\n\n")
+print ("===========================\nEscape sequence: .start , .del\n\n")
 
 possible_passwords=[]
 while True:     #Loading in possible_passwords
     entry=input("0xF9"+str(int(random()*89+10))+" ")
 
-    if entry == "\start":
+    if entry == ".start":
         break
-    elif entry =="\del":
+    elif entry ==".del":
         if len(possible_passwords)>1:
             last = len(possible_passwords)-1
             print ("Removed "+possible_passwords[last])
@@ -27,7 +27,7 @@ while True:     #Loading in possible_passwords
         else:
             print("NO PASSWORDS ENTERED")
     elif entry=="":
-        print("ENTER \\START TO BEGIN TESTING")
+        print("ENTER .START TO BEGIN TESTING")
     else:
         #append it first, if its invalid then we delete
         possible_passwords.append(entry)
@@ -81,8 +81,10 @@ for x in range(0,4): #give 4 attempts
 if unlocked:
   print("\n\nEXACT MATCH!\nPLEASE WAIT WHILE SYSTEM IS ACCESSED")
   print("LOGON ADMIN\nENTER PASSWORD NOW\t")
+  starString = ""
   for star in range(0,len(test_word)):
-    print("*", end='')
+    starString=starString+"*"
+  print(starString)
   print("\n\nACCESS GRANTED")
 else:
   print("\n\nTERMINAL LOCKED\nPLEASE CONTACT AN ADMINISTRATOR")
