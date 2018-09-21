@@ -1,0 +1,42 @@
+MODIFICATION CHANGE LOG
+========================
+
+./configure:584:	PACKAGE_STRING='GNU nano 2.9.8'
+			'GNU nano 2.9.8' -> 'RobCo Indust. (TM)'
+			Titlebar text. Opposite of Status message
+
+src/winio.c:2047:	path = _("New Buffer");
+			"New Buffer" -> "Run DEBUG/ACCOUNTS.F"
+			Status message upon creating new file
+
+src/winio.c:2052:	state = _("Modified");
+			"Modified" -> "3 Attempt(s) Left"
+			changes the "Modified" on the right side hand when editing
+
+src/winio.c:2054        state = _("View");
+			"View" -> "Terminal Locked"
+			Status message when opening a file in readonly mode (nano -v <filename>)
+
+src/nano.c:2665:	statusbar(_("Welcome to nano.  For basic help, type Ctrl+G."));
+			"Welcome to nano..." -> "Copyright 2075-2077"
+			Welcome message on program startup
+
+src/help.c:427		htx[0] = N_("Main nano help text\n\n "
+			Help page edited to mention that it is a mod
+			"Help Page" title and message
+
+src/nano.c:536  	statusbar(_("Key is invalid in view mode"));
+			"Key is invalid..." -> "[Entry Denied]"
+			Message when attempting an edit in readonly mode
+
+src/global.c: 505	const char *readfile_tag = N_("Read File");
+			"Read File" -> "Read Holo"
+			Shortcut key text for reading from file
+
+src/files.c:1049:	msg = _("File to insert into new buffer [from %s]");
+			"File to insert..." -> "Holotape to insert..."
+			Prompt when attempting to read from file
+
+src/files.c:1052:	msg = _("File to insert [from %s]");
+			"File to insert..." -> "Holotape to insert..."
+			Prompt when attempting to read from file

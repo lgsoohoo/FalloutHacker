@@ -1,17 +1,18 @@
-#Python3 FalloutHacker
+#Python3 hackerBot
 #https://github.com/lgsoohoo/FalloutHacker
 #By PikaLuca87
 
 
 # All possible passwords must be the same length
 # Passwords you try must be from the list you entered before
-# Press '\start' to begin testing passwords
-# Type '\del' to delete an entered possible password
+# Press '.start' to begin testing passwords
+# Type '.del' to delete an entered possible password
+
 from random import random
 print ("Fallout 3: Hacking: Hacking Computer Terminals")
 print ("\nROBCO INDUSTRIES (TM) TERMLINK PROTOCOL")
 print ("\nENTER POSSIBLE_PASSWORDS NOW\n")
-print ("===========================\nEscape sequence: .start , .del\n\n")
+print ("===========================\nEscape sequences: '.start' , '.del'\n\n")
 
 possible_passwords=[]
 while True:     #Loading in possible_passwords
